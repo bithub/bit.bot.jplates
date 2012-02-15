@@ -12,5 +12,6 @@ class BotJPlates(BotPlugin):
     _http = {'root': 'resources'}
     def load_JS(self):
         js = getUtility(IResourceRegistry,'js')
+        js.add('jquery.tmpl.min.js',{'rel':'link'})
         js.add('jplates/jquery.jplates.js',{'rel':'link'})
 
