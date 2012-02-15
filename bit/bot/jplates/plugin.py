@@ -9,6 +9,7 @@ from bit.bot.base.plugin import BotPlugin
 class BotJPlates(BotPlugin):
     implements(IPlugin)
     name = 'bit.bot.jplates'
+    _http = {'root': 'resources'}
     def load_JS(self):
         js = getUtility(IResourceRegistry,'js')
         js.add('jplates/jquery.jplates.js',{'rel':'link'})
