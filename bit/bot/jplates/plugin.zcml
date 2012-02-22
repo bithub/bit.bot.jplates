@@ -1,0 +1,11 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope">
+  <include 
+      package="bit.bot.web" 
+      file="plugin.zcml" 
+      />
+  <http filepath="./resources" />
+  <js name="jquery.tmpl.min.js" />
+  <js name="jplates/jquery.jplates.js" />
+</configure>
+
