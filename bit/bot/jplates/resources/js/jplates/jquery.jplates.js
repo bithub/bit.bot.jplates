@@ -1,6 +1,5 @@
-/*jslint debug: true, maxerr: 50, indent: 4 */
 (function ($) {
-    //"use strict";
+    "use strict";
     var templates = {};
     $.extend({
 	jplates: function (options, cb) {
@@ -14,6 +13,7 @@
 	    };
             loadTemplates = function (tids, html) {
 		var t, tt, temphtml, thtml;
+		console.log('jplates: loadTemplates',  tids)
 		for (tt in tids) {
 		    if (tids.hasOwnProperty(tt)) {
 			t = tids[tt];
@@ -31,19 +31,21 @@
 				thtml = thtml.replace(/src_="/g, 'src="');
 				$.template(t, thtml);
 			    } else {
-				console.log('template not found: ' + t);
+				console.error('template not found: ' + t);
 			    }
 			}
 		    }
 		}
             };
             success =  function (msg) {
+		console.log('jplates: success ',  this.url)
 		templates[this.url] = msg;
 		loadTemplates(options[this.url], msg);
             };
             complete = function () {
 		counter -= 1;
 		if (counter === 0) {
+		    console.log('jplates: complete')
                     if (cb) {
 			cb();
                     }
