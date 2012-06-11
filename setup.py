@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 import os
 
 
-version = '0.0.11'
+version = '0.0.12'
 
 
 setup(name='bit.bot.jplates',
